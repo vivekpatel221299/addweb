@@ -234,4 +234,14 @@ class TblShortlinkController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+	
+	 public function actionOpenoringallink($code)
+    {
+		$Res = TblShortlink::find()->where(['code'=>$code])->one();
+		
+        return $this->render('openlink', [
+            'model' => $Res,
+        ]);
+    }
+	
 }

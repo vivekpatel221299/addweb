@@ -35,8 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					'buttons' => [
 					'openoringallink' => function ($url, $model, $key) 
 					{
-						$oringnal_link = "'".$model->oringnal_link."'";
-						return '<input type="button" value="New Tab" onclick="window.open('.$oringnal_link.')">';	
+					      return  Html::a('Open Orignal Link', ['openoringallink', 'code' => $model->code],['title' => 'Open Orignal Link']);
 					}
             ]
 			],
